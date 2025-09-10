@@ -1,0 +1,64 @@
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .RegisterWrapper {
+    width: fit-content !important;
+    height: fit-content !important;
+    padding: 2rem 2rem !important;
+    justify-content: center !important;
+    border-radius: 10px !important;
+  }
+  .RegisterWelcomeText {
+    font-size: 2.7rem !important;
+  }
+  .RegisterDescText {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
+}
+@media (min-width: 2560px) and (max-width: 3440px) {
+  .RegisterWrapper {
+    width: fit-content !important;
+    height: fit-content !important;
+    padding: 2rem 2.5rem !important;
+    justify-content: center !important;
+    border-radius: 10px !important;
+  }
+  .RegisterWelcomeText {
+    font-size: 2.9rem !important;
+  }
+  .RegisterDescText {
+    font-size: 1.7rem;
+    margin-bottom: 30px;
+  }
+}
+@media (min-width: 3440px) and (max-width: 3840px) {
+  .RegisterWrapper {
+    width: fit-content !important;
+    height: fit-content !important;
+    padding: 3rem 3.5rem !important;
+    justify-content: center !important;
+    border-radius: 10px !important;
+  }
+  .RegisterWelcomeText {
+    font-size: 3.7rem !important;
+  }
+  .RegisterDescText {
+    font-size: 2.2rem;
+    margin-bottom: 40px !important;
+  }
+}
+@media (min-width: 3840px) {
+  .RegisterWrapper {
+    width: fit-content !important;
+    height: fit-content !important;
+    padding: 4rem 4rem !important;
+    justify-content: center !important;
+    border-radius: 10px !important;
+  }
+  .RegisterWelcomeText {
+    font-size: 4.5rem !important;
+  }
+  .RegisterDescText {
+    font-size: 2.5rem;
+    margin-bottom: 40px !important;
+  }
+}

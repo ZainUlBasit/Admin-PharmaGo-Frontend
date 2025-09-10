@@ -1,0 +1,15 @@
+.gradient-text-link {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 95, 109, 1) 0%,
+    rgba(255, 195, 113, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-weight: 500;
+}

@@ -1,0 +1,20 @@
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .maxWidth {
+    width: 320px;
+  }
+}
+@media (min-width: 2560px) and (max-width: 3440px) {
+  .maxWidth {
+    width: 450px;
+  }
+}
+@media (min-width: 3440px) and (max-width: 3840px) {
+  .maxWidth {
+    width: 550px;
+  }
+}
+@media (min-width: 3840px) {
+  .maxWidth {
+    width: 650px;
+  }
+}
