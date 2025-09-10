@@ -37,20 +37,7 @@ const ProductManagement = () => {
         title={"Product Management"}
         desc={"Manage and keep track of your products."}
       >
-        <button
-          className="bg-main hover:bg-main/80 whitespace-nowrap justify-center font-roboto text-white px-4 py-2 rounded-xl flex items-center gap-2 transition-all ease-in-out duration-500"
-          onClick={() => navigate("/admin/add-category")}
-        >
-          <span className="text-2xl">+</span>
-          Add Category
-        </button>
-        <button
-          className="bg-main hover:bg-main/80 whitespace-nowrap justify-center font-roboto text-white px-4 py-2 rounded-xl flex items-center gap-2 transition-all ease-in-out duration-500"
-          onClick={() => navigate("/admin/add-sub-category")}
-        >
-          <span className="text-2xl">+</span>
-          Add Sub Category
-        </button>
+        
         <button
           className="bg-main hover:bg-main/80 whitespace-nowrap justify-center font-roboto text-white px-4 py-2 rounded-xl flex items-center gap-2 transition-all ease-in-out duration-500"
           onClick={() => navigate("/admin/add-product")}

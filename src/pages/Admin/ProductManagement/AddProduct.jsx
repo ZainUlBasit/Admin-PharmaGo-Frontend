@@ -140,7 +140,7 @@ const AddProduct = () => {
   return (
     <div className="flex-1 flex flex-col gap-y-2 max-h-[100vh] overflow-hidden">
       <div className="flex w-full gap-x-2 justify-start items-center h-[5vh]">
-        <IoMdArrowRoundBack className="text-2xl" />
+        <IoMdArrowRoundBack className="text-2xl cursor-pointer" onClick={() => navigate("/admin/products")}   />
         <div className="text-2xl font-semibold">Add New Product</div>
       </div>
       <div className="bg-white p-5 h-[90vh] overflow-y-auto">

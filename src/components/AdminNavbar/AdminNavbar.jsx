@@ -27,9 +27,9 @@ const sideMenuItems = [
     Link: "/admin",
   },
   {
-    title: "User Management",
+    title: "Cities Management",
     Icon: FaUser,
-    Link: "/admin/users",
+    Link: "/admin/cities",
   },
   {
     title: "Category Management",
@@ -131,7 +131,8 @@ const AdminNavbar = () => {
                   onClick={() => {
                     navigate("/");
                   }}
-                />
+                /> 
+                <div className="text-[2rem] font-bold text-main font-inter">Pharma Go</div>
               </div>
             </h2>
           </div>
