@@ -1,6 +1,6 @@
 import axios from "axios";
-const baseURL = "http://localhost:9000/api";
-// const baseURL = "https://game-point-backend-wmvs.vercel.app/api";
+// const baseURL = "http://localhost:9000/api";
+const baseURL = "https://pharma-go-backend.vercel.app/api";
 
 export const api = axios.create({
   baseURL: baseURL,
