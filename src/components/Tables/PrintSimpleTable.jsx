@@ -20,7 +20,7 @@ const TableWrapper = styled.div`
   width: 100%;
 `;
 
-export default function PrintSimpleTable({ rows, columns, title, bgColor }) {
+export default function PrintSimpleTable({ rows, columns, title, bgColor, textColor }) {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
 
@@ -61,7 +61,7 @@ export default function PrintSimpleTable({ rows, columns, title, bgColor }) {
                     style={{
                       minWidth: column.minWidth,
                       backgroundColor: bgColor ? bgColor : "#ffffff",
-                      color: "black",
+                      color: textColor ? textColor : "black",
                       fontWeight: "600",
                       fontSize: "1rem",
                       fontFamily: "'Quicksand', sans-serif",

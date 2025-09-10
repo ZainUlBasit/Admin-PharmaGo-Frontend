@@ -62,9 +62,12 @@ const OrderDetail = () => {
         </div>
         <div
           id="Invoice"
-          style={{ border: "2px solid", padding: "20px" }}
-          className="flex-1 border-main"
+          style={{ border: "2px solid", padding: "20px", borderBottom: "none" }}
+          className="flex-1 border-main relative"
         >
+          <div className="h-full w-full absolute top-0 left-0 flex justify-center items-center">
+            <img src="/logo.svg" alt="Logo" className="w-[580px] opacity-10" />
+          </div>
           {/* Header */}
           <div
             style={{
@@ -74,13 +77,18 @@ const OrderDetail = () => {
               marginBottom: "20px",
             }}
           >
-            <div style={{ display: "flex", alignItems: "center" }}>
-              <img
-                src="/logo.svg"
-                alt="Logo"
-                style={{ marginRight: "10px" }}
-                className="w-[250px]"
-              />
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <img src="/logo.svg" alt="Logo" className="w-[180px]" />
+              <div className="text-[2rem] font-extrabold text-main font-quicksand">
+                Pharma Go
+              </div>
             </div>
             <h2 style={{ fontSize: "32px", margin: 0 }}>INVOICE</h2>
           </div>
@@ -147,6 +155,8 @@ const OrderDetail = () => {
               },
             ]}
             rows={currentOrderDetail.items}
+            bgColor={"#465462"}
+            textColor={"#ffffff"}
           />
 
           <hr />
