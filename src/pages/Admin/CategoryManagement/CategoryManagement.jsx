@@ -28,11 +28,9 @@ const CategoryManagement = () => {
   const [Selected, setSelected] = useState("");
   const dispatch = useDispatch();
   const CatState = useSelector((state) => state.CategoryState);
-  const SubCatState = useSelector((state) => state.SubCategoryState);
 
   useEffect(() => {
     dispatch(fetchCategories());
-    dispatch(fetchSubCategories());
   }, []);
   useEffect(() => {
     console.log("yes");
@@ -42,8 +40,8 @@ const CategoryManagement = () => {
   return (
     <div className="flex-1 ">
       <Header
-        title={"Cities Management"}
-        desc={"Manage and keep track of your cities."}
+        title={"Category Management"}
+        desc={"Manage and keep track of your categories."}
       >
         <button
           className="bg-main hover:bg-main/80 whitespace-nowrap justify-center font-roboto text-white px-4 py-2 rounded-xl flex items-center gap-2 transition-all ease-in-out duration-500"
@@ -52,61 +50,40 @@ const CategoryManagement = () => {
           }}
         >
           <span className="text-2xl">+</span>
-          Add City
+          Add Category
         </button>
       </Header>
 
       <StatsCards
-        title={"City Overview"}
+        title={"Category Overview"}
         statsData={[
           {
-            title: "All Cities",
+            title: "All Categories",
             value: CatState.data.length || 0,
             subtitle: "",
             textColor: "text-[black]",
           },
         ]}
       />
-      {CatState.loading || SubCatState.loading ? (
+      {CatState.loading ? (
         <div className="w-full flex justify-center items-center py-20">
           <AddingLightLoader />
         </div>
       ) : (
-        <>
-          {CurrentTab === "Cat" ? (
-            <div className="w-full flex flex-col bg-white my-4">
-              <TableComp
-                Rows={CatState.data}
-                Columns={CategoryTableColumns}
-                setOpenEditModal={setOpenCatEditModal}
-                setOpenDeleteModal={setOpenCatDeleteModal}
-                setSelected={setSelected}
-              />
-            </div>
-          ) : (
-            CurrentTab === "SubCat" && (
-              <div className="w-full flex flex-col bg-white my-4">
-                <TableComp
-                  Rows={SubCatState.data}
-                  Columns={SubCategoryTableColumns}
-                  setOpenEditModal={setOpenSubCatEditModal}
-                  setOpenDeleteModal={setOpenSubCatDeleteModal}
-                  setSelected={setSelected}
-                />
-              </div>
-            )
-          )}
-        </>
+          <div className="w-full flex flex-col bg-white my-4">
+            <TableComp
+              Rows={CatState.data}
+              Columns={CategoryTableColumns}
+              setOpenEditModal={setOpenCatEditModal}
+              setOpenDeleteModal={setOpenCatDeleteModal}
+              setSelected={setSelected}
+            />
+          </div>
       )}
       {AddCatModal && (
         <AddCategoryModal open={AddCatModal} setOpen={setAddCatModal} />
       )}
-      {AddSubCatModal && (
-        <AddSubCategoryModal
-          open={AddSubCatModal}
-          setOpen={setAddSubCatModal}
-        />
-      )}
+      
       {OpenCatEditModal && (
         <EditCategoryModal
           category={CatState.data.find((dt) => dt._id === Selected._id)}
@@ -114,13 +91,7 @@ const CategoryManagement = () => {
           setOpen={setOpenCatEditModal}
         />
       )}
-      {OpenSubCatEditModal && (
-        <EditSubCategoryModal
-          subCategory={SubCatState.data.find((dt) => dt._id === Selected._id)}
-          open={OpenSubCatEditModal}
-          setOpen={setOpenSubCatEditModal}
-        />
-      )}
+     
 
       {OpenCatDeleteModal && (
         <DeleteModal
@@ -143,27 +114,7 @@ const CategoryManagement = () => {
           Loading={Loading}
         />
       )}
-      {OpenSubCatDeleteModal && (
-        <DeleteModal
-          Open={OpenSubCatDeleteModal}
-          setOpen={setOpenSubCatDeleteModal}
-          onSubmit={async () => {
-            setLoading(true);
-            try {
-              const response = await DeleteSubCategoryApi(Selected._id);
-              if (response.data.success) {
-                SuccessToast(response.data.data.msg);
-                setOpenSubCatDeleteModal(false);
-                dispatch(fetchSubCategories());
-              }
-            } catch (err) {
-              console.log(err);
-            }
-            setLoading(false);
-          }}
-          Loading={Loading}
-        />
-      )}
+      
     </div>
   );
 };

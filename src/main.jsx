@@ -122,7 +122,7 @@ const adminRouter = createBrowserRouter([
         element: <EditProduct />,
       },
       {
-        path: "users",
+        path: "cities",
         element: <UserManagement />,
       },
       {
